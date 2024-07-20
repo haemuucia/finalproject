@@ -8,7 +8,7 @@ import pymongo
 WAIT_TIME = 10
 
 ## Variables
-url = "mongodb+srv://ireneslebew:Akusayangayam12*@finalproject.hbgtqlm.mongodb.net/?retryWrites=true&w=majority&appName=finalproject"
+url = "YOUR_MONGO_URL"
 databaseName = "testing"
 collectionName = "test"
 
