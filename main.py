@@ -291,9 +291,12 @@ def fragment_possible_causes_container(temp, ph, tds, ec):
   html_possible_causes = "".join([
     f'<strong class="text-xl sm:text-2xl">{key}</strong>'
     f'<ul class="list-disc mb-5 sm:ml-5">'
-    f'{"".join([f"<li class=\'text-sm sm:text-2xl\'>{cause}</li>" for cause in causes])}</ul>' 
-    for key, causes in possible_causes.items() if causes
-  ])
+    f'<li>'
+    f'{"".join([f"<span class='text-sm sm:text-2xl'>{cause}</span>" for cause in causes])}'
+    f'</li>'
+    f'</ul>'
+    for key, causes in possible_causes.items() if causes
+  ])
   
   html_possible_causes_container = f'''
     <div style="color: #1A3E7E;" class="w-full p-5 sm:p-10 flex flex-col bg-white rounded-xl shadow-black shadow-2xl">
@@ -316,7 +319,9 @@ def fragment_suggestions_container(temp, ph, tds, ec):
   html_possible_suggestions = "".join([
     f'<strong class="text-xl sm:text-2xl">{key}</strong>'
     f'<ul class="list-disc mb-5 sm:ml-5">'
-    f'{"".join([f"<li class=\'text-sm sm:text-2xl\'>{suggestion}</li>" for suggestion in suggestions])}'
+    f'<li>'
+    f'{"".join([f"<span class='text-sm sm:text-2xl'>{suggestion}</span>" for suggestion in suggestions])}'
+    f'</li>'
     f'</ul>'
     for key, suggestions in possible_suggestions.items() if suggestions
   ])
