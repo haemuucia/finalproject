@@ -289,14 +289,10 @@ def fragment_possible_causes_container(temp, ph, tds, ec):
   }
 
   html_possible_causes = "".join([
-   html_possible_causes  = ""
-  for key, causes in possible_causes.items():
-    if causes:
-        html_possible_causes += f'<strong class="text-xl sm:text-2xl">{key}</strong>'
-        html_possible_causes += '<ul class="list-none sm:list-disc mb-5 sm:ml-5">'
-        for cause in causes:
-            html_possible_causes += f'<li class="text-sm sm:text-2xl">{cause}</li>'
-        html_possible_causes += '</ul>'
+    f'<strong class="text-xl sm:text-2xl">{key}</strong>'
+    f'<ul class="list-disc mb-5 sm:ml-5">'
+    f'{"".join([f"<li><span class='text-sm sm:text-2xl'>{cause}</span></li>" for cause in causes])}'
+    f'</ul>'
     for key, causes in possible_causes.items() if causes
   ])
   
@@ -318,14 +314,11 @@ def fragment_suggestions_container(temp, ph, tds, ec):
     "EC": ec_suggestion(ec)
   }
 
-  html_possible_suggestions = ""
-  for key, suggestions in possible_suggestions.items():
-    if suggestions:
-        html_possible_suggestions += f'<strong class="text-xl sm:text-2xl">{key}</strong>'
-        html_possible_suggestions += '<ul class="list-none sm:list-disc mb-5 sm:ml-5">'
-        for suggestion in suggestions:
-            html_possible_suggestions += f'<li class="text-sm sm:text-2xl">{suggestion}</li>'
-        html_possible_suggestions += '</ul>'
+  html_possible_suggestions = "".join([
+    f'<strong class="text-xl sm:text-2xl">{key}</strong>'
+    f'<ul class="list-disc mb-5 sm:ml-5">'
+    f'{"".join([f"<li><span class='text-sm sm:text-2xl'>{suggestion}</span></li>" for suggestion in suggestions])}'
+    f'</ul>'
     for key, suggestions in possible_suggestions.items() if suggestions
   ])
  
