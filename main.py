@@ -295,8 +295,8 @@ def fragment_possible_causes_container(temp, ph, tds, ec):
     f'{"".join([f"<span class='text-sm sm:text-2xl'>{cause}</span>" for cause in causes])}'
     f'</li>'
     f'</ul>'
-    for key, causes in possible_causes.items() if causes
-  ])
+    for key, causes in possible_causes.items() if causes
+  ])
   
   html_possible_causes_container = f'''
     <div style="color: #1A3E7E;" class="w-full p-5 sm:p-10 flex flex-col bg-white rounded-xl shadow-black shadow-2xl">
