@@ -5,8 +5,6 @@ import time
 import pymongo
 from pymongo import MongoClient
 from pymongo.server_api import ServerApi
-import string
-import schedule
 from collections import Counter
 
 
