@@ -46,3 +46,22 @@ This project is designed to monitor the quality of water by measuring key parame
 
 - **[main.py](main.py)**  
   Main file for the Streamlit web application. It sets up the web interface, fetches and displays sensor data, provides possible causes and suggestions based on the readings, and controls filtration.
+
+## How To Use
+
+1. Clone Repository
+   ```bash
+   git clone https://github.com/haemuucia/finalproject
+   cd finalproject
+   ```
+
+3. Install Dependencies
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+5. Run Application
+   ```bash
+   streamlit run main.py 
+   ```
+   
