@@ -292,7 +292,7 @@ def fragment_possible_causes_container(temp, ph, tds, ec):
     f'<strong class="text-xl sm:text-2xl">{key}</strong>'
     f'<ul class="list-disc mb-5 sm:ml-5">'
     f'<li>'
-    f'{"".join([f"<span class='text-sm sm:text-2xl'>{cause}</span>" for cause in causes])}'
+    f'{"".join([f"<span style="font-size: 0.875rem; font-size: 1.25rem @media (min-width: 640px);">{cause}</span>" for cause in causes])}'
     f'</li>'
     f'</ul>'
     for key, causes in possible_causes.items() if causes
@@ -320,7 +320,7 @@ def fragment_suggestions_container(temp, ph, tds, ec):
     f'<strong class="text-xl sm:text-2xl">{key}</strong>'
     f'<ul class="list-disc mb-5 sm:ml-5">'
     f'<li>'
-    f'{"".join([f"<span class='text-sm sm:text-2xl'>{suggestion}</span>" for suggestion in suggestions])}'
+    f'{"".join([f"<span style="font-size: 0.875rem; font-size: 1.25rem @media (min-width: 640px);">{suggestion}</span>" for suggestion in suggestions])}'
     f'</li>'
     f'</ul>'
     for key, suggestions in possible_suggestions.items() if suggestions
