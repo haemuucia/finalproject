@@ -27,8 +27,7 @@ tailwind_cdn = """
 st.markdown(tailwind_cdn, unsafe_allow_html=True)
 
 # Load model
-model = joblib.load("Model/water_quality_model.pkl")
-print(model)
+model = joblib.load("waterquality_model.pkl")
 
 # Predict Function
 def predict(data):
