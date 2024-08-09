@@ -297,7 +297,7 @@ def fragment_possible_causes_container(temp, ph, tds, ec):
     f'<ul class="list-disc mb-5 sm:ml-5">'
     f'{"".join([f"<li><span class=\"text-sm sm:text-2xl\">{cause}</span></li>" for cause in causes])}'
     f'</ul>'
-    for key, causes in possible_causes.items() if causes
+    for key, causes in possible_causes.items() if causes != [] and causes is not None
   ])
   
   html_possible_causes_container = f'''
