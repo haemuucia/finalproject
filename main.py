@@ -28,6 +28,10 @@ st.markdown(tailwind_cdn, unsafe_allow_html=True)
 
 # Load model
 model = joblib.load("waterquality_model.pkl")
+# Load dataset
+water = pd.read_csv('water_quality_data.csv')
+temp = round(water['Temperature (°C)'][18], 1)  # round to 1 decimal place
+ph = round(water['pH'][18], 1)
 
 # Predict Function
 def predict(data):
@@ -291,7 +295,7 @@ def fragment_possible_causes_container(temp, ph, tds, ec):
   html_possible_causes = "".join([
     f'<strong class="text-xl sm:text-2xl">{key}</strong>'
     f'<ul class="list-disc mb-5 sm:ml-5">'
-    f'''{"".join([f"<li><span class='text-sm sm:text-2xl'>{cause}</span></li>" for cause in causes])}'''    f'</ul>'
+    f'{"".join([f"<li><span class='text-sm sm:text-2xl'>{cause}</span></li>" for cause in causes])}'
     f'</ul>'
     for key, causes in possible_causes.items() if causes
   ])
@@ -315,13 +319,13 @@ def fragment_suggestions_container(temp, ph, tds, ec):
   }
 
   html_possible_suggestions = "".join([
-    f'''<strong class="text-xl sm:text-2xl">{key}</strong>
-    <ul class="list-disc mb-5 sm:ml-5">'''
-    + "".join([f'''<li><span class="text-sm sm:text-2xl">{suggestion}</span></li>''' for suggestion in suggestions])
-    + f'''</ul>'''
+    f'<strong class="text-xl sm:text-2xl">{key}</strong>'
+    f'<ul class="list-disc mb-5 sm:ml-5">'
+    f'{"".join([f"<li><span class='text-sm sm:text-2xl'>{suggestion}</span></li>" for suggestion in suggestions])}'
+    f'</ul>'
     for key, suggestions in possible_suggestions.items() if suggestions
   ])
-
+ 
   html_suggestion_container = f'''
     <div style="color: #1A3E7E;" class="w-full p-5 sm:p-10 flex flex-col bg-white rounded-xl shadow-black shadow-2xl">
       <span style="color: #1A3E7E; font-weight: bold;" class="text-3xl sm:text-4xl text-center mb-5">Suggestions</span>
@@ -393,8 +397,6 @@ while True:
   for key in data:
     data[key] = round(data[key], 1)
 
-  ph = data['pH'][0]
-  temp = data['Temperature (°C)'][0]
   tds = data['TDS (ppm)'][0]
   ec = data['EC (NTU)'][0]
   status = predict(data)[0]
