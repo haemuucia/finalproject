@@ -314,13 +314,13 @@ def fragment_suggestions_container(temp, ph, tds, ec):
     "EC": ec_suggestion(ec)
   }
 
-  html_possible_suggestions = "".join([
+html_possible_suggestions = "".join([
     f'''<strong class="text-xl sm:text-2xl">{key}</strong>
     <ul class="list-disc mb-5 sm:ml-5">'''
     + "".join([f'''<li><span class="text-sm sm:text-2xl">{suggestion}</span></li>''' for suggestion in suggestions])
     + f'''</ul>'''
     for key, suggestions in possible_suggestions.items() if suggestions
-  ])
+])
  
   html_suggestion_container = f'''
     <div style="color: #1A3E7E;" class="w-full p-5 sm:p-10 flex flex-col bg-white rounded-xl shadow-black shadow-2xl">
