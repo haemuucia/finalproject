@@ -27,7 +27,7 @@ tailwind_cdn = """
 st.markdown(tailwind_cdn, unsafe_allow_html=True)
 
 # Load model
-model = joblib.load(os.path.join(os.path.dirname(__file__), "waterquality_model.pkl"))
+model = joblib.load(os.path.join(os.path.dirname(__file__), "Model", "waterquality_model.pkl"))
 water = pd.read_csv('water_quality_data.csv')
 
 # Predict Function
