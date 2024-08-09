@@ -27,11 +27,8 @@ tailwind_cdn = """
 st.markdown(tailwind_cdn, unsafe_allow_html=True)
 
 # Load model
-model = joblib.load("waterquality_model.pkl")
-# Load dataset
+joblib.load(os.path.join(os.path.dirname(__file__), "waterquality_model.pkl"))# Load dataset
 water = pd.read_csv('water_quality_data.csv')
-temp = round(water['Temperature (°C)'][18], 1)  # round to 1 decimal place
-ph = round(water['pH'][18], 1)
 
 # Predict Function
 def predict(data):
